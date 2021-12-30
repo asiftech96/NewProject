@@ -1,0 +1,319 @@
+package com.bezkoder.spring.datajpa;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableScheduling;
+
+@SpringBootApplication
+@EnableScheduling
+public class SpringBootDataJpaApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SpringBootDataJpaApplication.class, args);
+	}
+
+}
+
+
+==========================================================================================================================
+
+@Scheduled(cron = "*/10 * * * * *")
+	public void testBiller() {
+		
+		JSONParser jsonParser = new JSONParser();
+        
+        try (FileReader reader = new FileReader("D:\\_projects\\Asif\\HGA1F0A3990000021241.json"))
+        {
+            //Read JSON file
+            Object obj = jsonParser.parse(reader);
+ 
+            JSONArray billerList = (JSONArray) obj;
+            System.out.println(billerList);
+             
+            //Iterate over biller array
+          billerList.forEach( emp -> parseBillerObject( (JSONObject) emp ) );
+          
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
+	
+	  private void parseBillerObject(JSONObject biller) 
+	    {
+		  
+		    String objectid = (String) biller.get("objectid");    
+	        String billerid = (String) biller.get("billerid");  
+	        String biller_legal_name = (String) biller.get("biller_legal_name");    
+	        String biller_name = (String) biller.get("biller_name");  
+	        String biller_location = (String) biller.get("biller_location");  
+	        String biller_category = (String) biller.get("biller_category");  
+	        String biller_reg_address = (String) biller.get("biller_reg_address");  
+	        String biller_reg_city = (String) biller.get("biller_reg_city");  
+	        String biller_reg_pin = (String) biller.get("biller_reg_pin");  
+	        String biller_reg_state = (String) biller.get("biller_reg_state");  
+	        String biller_reg_country = (String) biller.get("biller_reg_country");  
+	        String biller_mode = (String) biller.get("biller_mode");  
+	        
+	        
+	        Biller biller1 = new Biller();
+	        biller1.setObjectid(objectid);
+	        biller1.setBillerid1(billerid);
+	        biller1.setBiller_legal_name(biller_legal_name);
+	        biller1.setBiller_name(biller_name);
+	        biller1.setBiller_location(biller_location);
+	        biller1.setBiller_category(biller_category);
+	        biller1.setBiller_reg_address(biller_reg_address);
+	        biller1.setBiller_reg_city(biller_reg_city);
+	        biller1.setBiller_reg_pin(biller_reg_pin);
+	        biller1.setBiller_reg_state(biller_reg_state);
+	        biller1.setBiller_reg_country(biller_reg_country);
+	        biller1.setBiller_mode(biller_mode);
+	        billerRepository.save(biller1);
+	    }
+
+
+======================================================================================================================================
+
+
+package com.bezkoder.spring.datajpa.model;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Biller_test")
+public class Biller {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer billerId;
+
+	// @Column(name = "objectid")
+	private String objectid;
+
+	// @Column(name = "billerid1")
+	private String billerid1;
+
+	// @Column(name = "reference_value_1")
+	private String biller_legal_name;
+
+	// @Column(name = "reference_value_1")
+	private String biller_name;
+
+	private String biller_location;
+	private String biller_category;
+	private String biller_reg_address;
+	private String biller_reg_city;
+	private String biller_reg_pin;
+	private String biller_reg_state;
+	private String biller_reg_country;
+	private String biller_mode;
+
+	public String getBiller_location() {
+		return biller_location;
+	}
+
+	public void setBiller_location(String biller_location) {
+		this.biller_location = biller_location;
+	}
+
+	public String getBiller_category() {
+		return biller_category;
+	}
+
+	public void setBiller_category(String biller_category) {
+		this.biller_category = biller_category;
+	}
+
+	public String getBiller_reg_address() {
+		return biller_reg_address;
+	}
+
+	public void setBiller_reg_address(String biller_reg_address) {
+		this.biller_reg_address = biller_reg_address;
+	}
+
+	public String getBiller_reg_city() {
+		return biller_reg_city;
+	}
+
+	public void setBiller_reg_city(String biller_reg_city) {
+		this.biller_reg_city = biller_reg_city;
+	}
+
+	public String getBiller_reg_pin() {
+		return biller_reg_pin;
+	}
+
+	public void setBiller_reg_pin(String biller_reg_pin) {
+		this.biller_reg_pin = biller_reg_pin;
+	}
+
+	public String getBiller_reg_state() {
+		return biller_reg_state;
+	}
+
+	public void setBiller_reg_state(String biller_reg_state) {
+		this.biller_reg_state = biller_reg_state;
+	}
+
+	public String getBiller_reg_country() {
+		return biller_reg_country;
+	}
+
+	public void setBiller_reg_country(String biller_reg_country) {
+		this.biller_reg_country = biller_reg_country;
+	}
+
+	public String getBiller_mode() {
+		return biller_mode;
+	}
+
+	public void setBiller_mode(String biller_mode) {
+		this.biller_mode = biller_mode;
+	}
+
+	public Integer getBillerId() {
+		return billerId;
+	}
+
+	public void setBillerId(Integer billerId) {
+		this.billerId = billerId;
+	}
+
+	public String getObjectid() {
+		return objectid;
+	}
+
+	public void setObjectid(String objectid) {
+		this.objectid = objectid;
+	}
+
+	public String getBillerid1() {
+		return billerid1;
+	}
+
+	public void setBillerid1(String billerid1) {
+		this.billerid1 = billerid1;
+	}
+
+	public String getBiller_legal_name() {
+		return biller_legal_name;
+	}
+
+	public void setBiller_legal_name(String biller_legal_name) {
+		this.biller_legal_name = biller_legal_name;
+	}
+
+	public String getBiller_name() {
+		return biller_name;
+	}
+
+	public void setBiller_name(String biller_name) {
+		this.biller_name = biller_name;
+	}
+
+}
+
+
+======================================================================================
+
+
+
+package com.bezkoder.spring.datajpa;
+
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import com.bezkoder.spring.datajpa.model.Biller;
+import com.bezkoder.spring.datajpa.repository.BillerRepository;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest(webEnvironment=WebEnvironment.RANDOM_PORT)
+public class Jsonread {
+	
+	@Autowired
+	private BillerRepository billerRepository;
+	
+	
+	@Test
+	public void testBiller() {
+		
+		JSONParser jsonParser = new JSONParser();
+        
+        try (FileReader reader = new FileReader("D:\\_projects\\Asif\\HGA1F0A3990000021241.json"))
+        {
+            //Read JSON file
+            Object obj = jsonParser.parse(reader);
+ 
+            JSONArray billerList = (JSONArray) obj;
+            System.out.println(billerList);
+             
+            //Iterate over biller array
+          billerList.forEach( emp -> parseBillerObject( (JSONObject) emp ) );
+          
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
+	
+	  private void parseBillerObject(JSONObject biller) 
+	    {
+		  
+		    String objectid = (String) biller.get("objectid");    
+	        String billerid = (String) biller.get("billerid");  
+	        String biller_legal_name = (String) biller.get("biller_legal_name");    
+	        String biller_name = (String) biller.get("biller_name");  
+	        String biller_location = (String) biller.get("biller_location");  
+	        String biller_category = (String) biller.get("biller_category");  
+	        String biller_reg_address = (String) biller.get("biller_reg_address");  
+	        String biller_reg_city = (String) biller.get("biller_reg_city");  
+	        String biller_reg_pin = (String) biller.get("biller_reg_pin");  
+	        String biller_reg_state = (String) biller.get("biller_reg_state");  
+	        String biller_reg_country = (String) biller.get("biller_reg_country");  
+	        String biller_mode = (String) biller.get("biller_mode");  
+	        
+	        
+	        Biller biller1 = new Biller();
+	        biller1.setObjectid(objectid);
+	        biller1.setBillerid1(billerid);
+	        biller1.setBiller_legal_name(biller_legal_name);
+	        biller1.setBiller_name(biller_name);
+	        biller1.setBiller_location(biller_location);
+	        biller1.setBiller_category(biller_category);
+	        biller1.setBiller_reg_address(biller_reg_address);
+	        biller1.setBiller_reg_city(biller_reg_city);
+	        biller1.setBiller_reg_pin(biller_reg_pin);
+	        biller1.setBiller_reg_state(biller_reg_state);
+	        biller1.setBiller_reg_country(biller_reg_country);
+	        biller1.setBiller_mode(biller_mode);
+	        billerRepository.save(biller1);
+	    }
+	
+	}
+======================================================================================================================
