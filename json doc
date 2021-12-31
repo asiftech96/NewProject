@@ -1,0 +1,509 @@
+package com.atechjson.json;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Biller_test")
+public class Biller {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer billerId;
+	
+	// @Column(name = "objectid")
+		private String objectid;
+
+		// @Column(name = "billerid1")
+		private String billerid1;
+
+		// @Column(name = "reference_value_1")
+		private String biller_legal_name;
+
+		// @Column(name = "reference_value_1")
+		private String biller_name;
+	
+//	@Column(name = "reference_value_1")
+	private String biller_location;
+	
+//	@Column(name = "reference_value_1")
+	private String biller_category;
+
+//	@Column(name = "reference_value_1")
+	private String biller_reg_address;
+
+//	@Column(name = "reference_value_1")
+	private String biller_reg_city;
+	
+//	@Column(name = "reference_value_1")
+	private String biller_reg_pin;
+	
+//	@Column(name = "reference_value_1")
+	private String biller_reg_state;
+	
+//	@Column(name = "reference_value_1")
+	private String biller_reg_country;
+	
+//	@Column(name = "reference_value_1")
+	private String biller_mode;
+	
+//	
+	
+//	@Column(name = "reference_value_1")
+	private String biller_status;
+	
+	// @Column(name = "reference_value_1")
+	private String biller_created_date;
+	
+//	@Column(name = "reference_value_1")
+	private String biller_lastmodified_date;
+
+	//@Column(name = "reference_value_1")
+	private String biller_logo;
+	
+	//@Column(name = "reference_value_1")
+	private String biller_bill_copy;
+	
+	//@Column(name = "reference_value_1")
+	private String biller_type;
+	
+//	@Column(name = "reference_value_1")
+	private String partial_pay;
+	
+	//@Column(name = "reference_value_1")
+	private String pay_after_duedate;
+	
+	//@Column(name = "reference_value_1")
+	private String online_validation;
+	
+	//@Column(name = "reference_value_1")
+	private String isbillerbbps;
+	
+	//@Column(name = "reference_value_1")
+	private String paymentamount_validation;
+	
+	//@Column(name = "reference_value_1")
+	private String bbps_billerid;
+	
+//	@Column(name = "reference_value_1")
+	private String bill_presentment;
+
+	private String payment_channels;
+	
+	public String getBiller_location() {
+		return biller_location;
+	}
+
+	public void setBiller_location(String biller_location) {
+		this.biller_location = biller_location;
+	}
+
+	public String getBiller_category() {
+		return biller_category;
+	}
+
+	public void setBiller_category(String biller_category) {
+		this.biller_category = biller_category;
+	}
+
+	public String getBiller_reg_address() {
+		return biller_reg_address;
+	}
+
+	public void setBiller_reg_address(String biller_reg_address) {
+		this.biller_reg_address = biller_reg_address;
+	}
+
+	public String getBiller_reg_city() {
+		return biller_reg_city;
+	}
+
+	public void setBiller_reg_city(String biller_reg_city) {
+		this.biller_reg_city = biller_reg_city;
+	}
+
+	public String getBiller_reg_pin() {
+		return biller_reg_pin;
+	}
+
+	public void setBiller_reg_pin(String biller_reg_pin) {
+		this.biller_reg_pin = biller_reg_pin;
+	}
+
+	public String getBiller_reg_state() {
+		return biller_reg_state;
+	}
+
+	public void setBiller_reg_state(String biller_reg_state) {
+		this.biller_reg_state = biller_reg_state;
+	}
+
+	public String getBiller_reg_country() {
+		return biller_reg_country;
+	}
+
+	public void setBiller_reg_country(String biller_reg_country) {
+		this.biller_reg_country = biller_reg_country;
+	}
+
+	public String getBiller_mode() {
+		return biller_mode;
+	}
+
+	public void setBiller_mode(String biller_mode) {
+		this.biller_mode = biller_mode;
+	}
+
+
+	public String getPayment_channels() {
+		return getPayment_channels();
+	}
+
+	public void setPayment_channels(String payment_channels) {
+		this.payment_channels = payment_channels;
+	}
+
+	public String getBiller_status() {
+		return biller_status;
+	}
+
+	public void setBiller_status(String biller_status) {
+		this.biller_status = biller_status;
+	}
+
+	public String getBiller_created_date() {
+		return biller_created_date;
+	}
+
+	public void setBiller_created_date(String biller_created_date) {
+		this.biller_created_date = biller_created_date;
+	}
+
+	public String getBiller_lastmodified_date() {
+		return biller_lastmodified_date;
+	}
+
+	public void setBiller_lastmodified_date(String biller_lastmodified_date) {
+		this.biller_lastmodified_date = biller_lastmodified_date;
+	}
+
+	public String getBiller_logo() {
+		return biller_logo;
+	}
+
+	public void setBiller_logo(String biller_logo) {
+		this.biller_logo = biller_logo;
+	}
+
+	public String getBiller_bill_copy() {
+		return biller_bill_copy;
+	}
+
+	public void setBiller_bill_copy(String biller_bill_copy) {
+		this.biller_bill_copy = biller_bill_copy;
+	}
+
+	public String getBiller_type() {
+		return biller_type;
+	}
+
+	public void setBiller_type(String biller_type) {
+		this.biller_type = biller_type;
+	}
+
+	public String getPartial_pay() {
+		return partial_pay;
+	}
+
+	public void setPartial_pay(String partial_pay) {
+		this.partial_pay = partial_pay;
+	}
+
+	public String getPay_after_duedate() {
+		return pay_after_duedate;
+	}
+
+	public void setPay_after_duedate(String pay_after_duedate) {
+		this.pay_after_duedate = pay_after_duedate;
+	}
+
+	public String getOnline_validation() {
+		return online_validation;
+	}
+
+	public void setOnline_validation(String online_validation) {
+		this.online_validation = online_validation;
+	}
+
+	public String getIsbillerbbps() {
+		return isbillerbbps;
+	}
+
+	public void setIsbillerbbps(String isbillerbbps) {
+		this.isbillerbbps = isbillerbbps;
+	}
+
+	public String getPaymentamount_validation() {
+		return paymentamount_validation;
+	}
+
+	public void setPaymentamount_validation(String paymentamount_validation) {
+		this.paymentamount_validation = paymentamount_validation;
+	}
+
+	public String getBbps_billerid() {
+		return bbps_billerid;
+	}
+
+	public void setBbps_billerid(String bbps_billerid) {
+		this.bbps_billerid = bbps_billerid;
+	}
+
+	public String getBill_presentment() {
+		return bill_presentment;
+	}
+
+	public void setBill_presentment(String bill_presentment) {
+		this.bill_presentment = bill_presentment;
+	}
+
+	public Integer getBillerId() {
+		return billerId;
+	}
+
+	public void setBillerId(Integer billerId) {
+		this.billerId = billerId;
+	}
+
+	public String getObjectid() {
+		return objectid;
+	}
+
+	public void setObjectid(String objectid) {
+		this.objectid = objectid;
+	}
+
+
+
+	public String getBiller_legal_name() {
+		return biller_legal_name;
+	}
+
+	public void setBiller_legal_name(String biller_legal_name) {
+		this.biller_legal_name = biller_legal_name;
+	}
+
+	public String getBiller_name() {
+		return biller_name;
+	}
+
+	public void setBiller_name(String biller_name) {
+		this.biller_name = biller_name;
+	}
+
+	public void setBillerid1(String billerid1) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+
+}
+***************************************************************************
+
+
+package com.atechjson.json;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface BillerRepository extends JpaRepository<Biller, Long> {
+
+}
+
+******************************************************************************
+
+
+
+package com.atechjson.json;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Service;
+import org.springframework.test.context.junit4.SpringRunner;
+
+
+@Service
+@RunWith(SpringRunner.class)
+@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
+public class Jsonread {
+
+	@Autowired
+	private BillerRepository billerRepository;
+
+	@Test
+	@Scheduled(cron = "*/10 * * * * *")
+	public void testBiller() {
+
+		JSONParser jsonParser = new JSONParser();
+
+		try (FileReader reader = new FileReader("D:\\_projects\\Asif\\HGA1F0A3990000021241.json")) {
+			// Read JSON file
+			Object obj = jsonParser.parse(reader);
+
+			JSONArray billerList = (JSONArray) obj;
+			System.out.println(billerList);
+
+			// Iterate over biller array
+			billerList.forEach(emp -> parseBillerObject((JSONObject) emp));
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+	}
+
+	private void parseBillerObject(JSONObject biller) {
+
+//		  JSONArray authenticatorsObject = (JSONArray) biller.get("authenticators");
+
+		String objectid = (String) biller.get("objectid");
+		System.out.println(objectid);
+
+		String billerid1 = (String) biller.get("billerid1");
+		System.out.println(billerid1);
+
+		String biller_legal_name = (String) biller.get("biller_legal_name");
+		System.out.println(biller_legal_name);
+
+		String biller_name = (String) biller.get("biller_name");
+		System.out.println(biller_name);
+
+		String biller_location = (String) biller.get("biller_location");
+		System.out.println(biller_location);
+
+		String biller_category = (String) biller.get("biller_category");
+		System.out.println(biller_category);
+
+		String biller_reg_address = (String) biller.get("biller_reg_address");
+		System.out.println(biller_reg_address);
+
+		String biller_reg_city = (String) biller.get("biller_reg_city");
+		System.out.println(biller_reg_city);
+
+		String biller_reg_pin = (String) biller.get("biller_reg_pin");
+		System.out.println(biller_reg_pin);
+
+		String biller_reg_state = (String) biller.get("biller_reg_state");
+		System.out.println(biller_reg_state);
+
+		String biller_reg_country = (String) biller.get("biller_reg_country");
+		System.out.println(biller_reg_country);
+
+		String biller_mode = (String) biller.get("biller_mode");
+		System.out.println(biller_mode);
+
+		String biller_status = (String) biller.get("biller_status");
+		System.out.println(biller_status);
+
+		String biller_created_date = (String) biller.get("biller_created_date");
+		System.out.println(biller_created_date);
+
+		String biller_lastmodified_date = (String) biller.get("biller_lastmodified_date");
+		System.out.println(biller_lastmodified_date);
+
+		String biller_logo = (String) biller.get("biller_logo");
+		System.out.println(biller_logo);
+
+		String biller_bill_copy = (String) biller.get("biller_bill_copy");
+		System.out.println(biller_bill_copy);
+
+		String biller_type = (String) biller.get("biller_type");
+		System.out.println(biller_type);
+
+		String partial_pay = (String) biller.get("partial_pay");
+		System.out.println(partial_pay);
+
+		String pay_after_duedate = (String) biller.get("pay_after_duedate");
+		System.out.println(pay_after_duedate);
+
+		String online_validation = (String) biller.get("online_validation");
+		System.out.println(online_validation);
+
+		String isbillerbbps = (String) biller.get("isbillerbbps");
+		System.out.println(isbillerbbps);
+
+		String paymentamount_validation = (String) biller.get("paymentamount_validation");
+		System.out.println(paymentamount_validation);
+
+		String bbps_billerid = (String) biller.get("bbps_billerid");
+		System.out.println(bbps_billerid);
+
+		String bill_presentment = (String) biller.get("bill_presentment");
+		System.out.println(bill_presentment);
+
+		Biller biller1 = new Biller();
+		biller1.setObjectid(objectid);
+		biller1.setBillerid1(billerid1);
+		biller1.setBiller_legal_name(biller_legal_name);
+		biller1.setBiller_name(biller_name);
+		biller1.setBiller_location(biller_location);
+		biller1.setBiller_name(biller_category);
+		biller1.setBiller_name(biller_reg_address);
+		biller1.setBiller_name(biller_reg_city);
+		biller1.setBiller_name(biller_reg_pin);
+		biller1.setBiller_name(biller_reg_state);
+		biller1.setBiller_name(biller_reg_country);
+		biller1.setBiller_name(biller_mode);
+		biller1.setBiller_name(biller_status);
+		biller1.setBiller_name(biller_created_date);
+		biller1.setBiller_name(biller_lastmodified_date);
+		biller1.setBiller_name(biller_logo);
+		biller1.setBiller_name(biller_bill_copy);
+		biller1.setBiller_name(biller_type);
+		biller1.setBiller_name(partial_pay);
+		biller1.setBiller_name(pay_after_duedate);
+		biller1.setBiller_name(online_validation);
+		biller1.setBiller_name(isbillerbbps);
+		biller1.setBiller_name(paymentamount_validation);
+		biller1.setBiller_name(bbps_billerid);
+		biller1.setBiller_name(bill_presentment);
+
+		billerRepository.save(biller1);
+	}
+
+}
+********************************************************************************
+
+package com.atechjson.json;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableScheduling;
+
+@SpringBootApplication
+@EnableScheduling
+public class SpringBootDataJpaApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SpringBootDataJpaApplication.class, args);
+	}
+
+}
+***********************************************************************************
